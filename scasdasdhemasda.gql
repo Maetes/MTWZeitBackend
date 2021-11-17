@@ -1,0 +1,60 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateSignofInput {
+  bis: String!
+  datum: Date!
+  kunde: String!
+  stunden: Float!
+  unterschrift: String!
+  von: String!
+}
+
+"""Date custom scalar type"""
+scalar Date
+
+type Mutation {
+  addRecipe(newRecipeData: NewRecipeInput!): Recipe!
+  createSignof(createSignofInput: CreateSignofInput!): Signof!
+  removeRecipe(id: String!): Boolean!
+  removeSignof(id: Int!): Signof!
+}
+
+input NewRecipeInput {
+  description: String
+  ingredients: [String!]!
+  title: String!
+}
+
+type Query {
+  recipe(id: String!): Recipe!
+  recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
+  signof(id: Int!): Signof!
+  signofAll: [Signof!]!
+}
+
+"""recipe """
+type Recipe {
+  creationDate: Date!
+  description: String
+  id: ID!
+  ingredients: [String!]!
+  title: String!
+}
+
+type Signof {
+  bis: String!
+  datum: Date!
+
+  """ID"""
+  id: Int
+  kunde: String!
+  stunden: Float!
+  unterschrift: String!
+  von: String!
+}
+
+type Subscription {
+  recipeAdded: Recipe!
+}

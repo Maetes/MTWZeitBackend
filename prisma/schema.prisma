@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model dbs_mtwSignOf {
+  id           Int      @id @default(autoincrement()) @db.UnsignedInt
+  datum        DateTime @db.DateTime(0)
+  kunde        String   @db.VarChar(255)
+  unterschrift String   @db.LongText
+  stunden      Float    @db.Float
+  von          String   @db.VarChar(255)
+  bis          String   @db.VarChar(255)
+}
