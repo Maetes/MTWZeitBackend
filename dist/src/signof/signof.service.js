@@ -29,6 +29,11 @@ let SignofService = class SignofService {
             where: { id },
         });
     }
+    async findContain(kd) {
+        return this.prismaSerive.dbs_mtwSignOf.findMany({
+            where: { kunde: { contains: kd } },
+        });
+    }
     async remove(id) {
         return this.prismaSerive.dbs_mtwSignOf.delete({
             where: { id },

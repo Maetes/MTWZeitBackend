@@ -24,6 +24,12 @@ export class SignofService {
     });
   }
 
+  async findContain(kd: string) {
+    return this.prismaSerive.dbs_mtwSignOf.findMany({
+      where: { kunde: { contains: kd } },
+    });
+  }
+
   // update(id: number, updateSignofInput: UpdateSignofInput) {
   //   return `This action updates a #${id} signof`;
   // }

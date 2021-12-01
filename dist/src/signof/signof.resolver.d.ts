@@ -6,5 +6,6 @@ export declare class SignofResolver {
     createSignof(createSignofInput: CreateSignofInput): Promise<import(".prisma/client").dbs_mtwSignOf>;
     findAll(): Promise<import(".prisma/client").dbs_mtwSignOf[]>;
     findOne(id: number): Promise<import(".prisma/client").dbs_mtwSignOf>;
+    findContain(kd: string): Promise<import(".prisma/client").dbs_mtwSignOf[]>;
     removeSignof(id: number): Promise<import(".prisma/client").dbs_mtwSignOf>;
 }

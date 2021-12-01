@@ -32,6 +32,7 @@ type Query {
   recipes(skip: Int = 0, take: Int = 25): [Recipe!]!
   signof(id: Int!): Signof!
   signofAll: [Signof!]!
+  signofContain(kd: String!): [Signof!]!
 }
 
 """recipe """

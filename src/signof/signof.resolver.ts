@@ -31,6 +31,11 @@ export class SignofResolver {
     return this.signofService.findOne(id);
   }
 
+  @Query(() => [Signof], { name: 'signofContain' })
+  findContain(@Args('kd', { type: () => String }) kd: string) {
+    return this.signofService.findContain(kd);
+  }
+
   // @Mutation(() => Signof)
   // updateSignof(@Args('updateSignofInput') updateSignofInput: UpdateSignofInput) {
   //   return this.signofService.update(updateSignofInput.id, updateSignofInput);

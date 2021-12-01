@@ -33,6 +33,9 @@ let SignofResolver = class SignofResolver {
     findOne(id) {
         return this.signofService.findOne(id);
     }
+    findContain(kd) {
+        return this.signofService.findContain(kd);
+    }
     removeSignof(id) {
         return this.signofService.remove(id);
     }
@@ -57,6 +60,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)
 ], SignofResolver.prototype, "findOne", null);
+__decorate([
+    (0, graphql_1.Query)(() => [signof_entity_1.Signof], { name: 'signofContain' }),
+    __param(0, (0, graphql_1.Args)('kd', { type: () => String })),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], SignofResolver.prototype, "findContain", null);
 __decorate([
     (0, graphql_1.Mutation)(() => signof_entity_1.Signof),
     __param(0, (0, graphql_1.Args)('id', { type: () => graphql_1.Int })),
