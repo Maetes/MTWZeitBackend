@@ -4,6 +4,7 @@ import { RecipesModule } from './recipes/recipes.module';
 import { SignofModule } from './signof/signof.module';
 import { PrismaService } from '../prisma/prisma.service';
 import { GraphqlOptions } from './graphql.options';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { GraphqlOptions } from './graphql.options';
       useClass: GraphqlOptions,
     }),
     SignofModule,
+    ConfigModule.forRoot({ isGlobal: true }),
   ],
   providers: [PrismaService],
 })
