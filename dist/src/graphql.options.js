@@ -19,7 +19,11 @@ let GraphqlOptions = class GraphqlOptions {
             plugins: [(0, apollo_server_core_1.ApolloServerPluginLandingPageLocalDefault)()],
             debug: true,
             introspection: true,
-            cors: true,
+            cors: {
+                origin: '*',
+                allowedHeaders: 'Content-Type,Accept,Authorization,Access-Control-Allow-Origin',
+                methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+            },
         };
     }
 };

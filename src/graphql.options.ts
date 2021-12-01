@@ -22,7 +22,12 @@ export class GraphqlOptions implements GqlOptionsFactory {
       //   outputAs: 'class',
       // },
       introspection: true,
-      cors: true,
+      cors: {
+        origin: '*',
+        allowedHeaders:
+          'Content-Type,Accept,Authorization,Access-Control-Allow-Origin',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+      },
     };
   }
 }
